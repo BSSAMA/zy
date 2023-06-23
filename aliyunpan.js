@@ -1,8 +1,10 @@
-/**
- * @name autoSignin.js
- * @author Anonym-w
- * @version 0.1
- */
+/*
+#阿里云盘自动签到
+cron: 0 9 * * *
+*/
+const $ = new Env('阿里云盘自动签到');
+const jsname = '科技玩家签到'
+const logDebug = 0
 
 const updateAccesssTokenURL = "https://auth.aliyundrive.com/v2/account/token"
 const signinURL = "https://member.aliyundrive.com/v1/activity/sign_in_list"
