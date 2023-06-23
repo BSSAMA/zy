@@ -69,13 +69,13 @@ def sign_in(access_token: str) -> bool:
             'Authorization': f'Bearer {access_token}',
         },
         json={},
-    ).json()
+    )。json()
 
-    if 'success' not in data:
+    if 'success' 不 in data:
         logging.error(f'😢签到失败, 错误信息: {data}')
         return False
 
-    current_day = None
+    current_day = 无
     for i, day in enumerate(data['result']['signInLogs']):
         if day['status'] == 'miss':
             current_day = data['result']['signInLogs'][i - 1]
@@ -83,7 +83,7 @@ def sign_in(access_token: str) -> bool:
 
     reward = (
         '无奖励'
-        if not current_day['isReward']
+        if 不 current_day['isReward']
         else f'获得 {current_day["reward"]["name"]} {current_day["reward"]["description"]}'
     )
     logging.info(f'😊签到成功, 本月累计签到 {data["result"]["signInCount"]} 天.')
@@ -101,18 +101,18 @@ def update_token_file(num: int, data: dict):
     :param num: 第几个用户
     """
     num -= 1
-    with open('aliConfig.json', 'r', encoding="utf-8") as f:
+    with 已打开('aliConfig.json', 'r', encoding="utf-8") as f:
         config = json.load(f)
     config[num] = data
-    with open('aliConfig.json', 'w', encoding="utf-8") as f:
-        f.write(json.dumps(config, indent=4, ensure_ascii=False))
+    with 已打开('aliConfig.json', 'w', encoding="utf-8") as f:
+        f.撰写(json.dumps(config, indent=4, ensure_ascii=False))
 
 
 def main():
     # 判断是否存在文件
-    if not os.path.exists('aliConfig.json'):
+    if 不 os.path。exists('aliConfig.json'):
         base = [{"refresh_token": "用户1refresh_token", "is": 0}, {"refresh_token": "用户2refresh_token", "is": 0}]
-        with open('aliConfig.json', 'w', encoding="utf-8") as f:
+        with 已打开('aliConfig.json', 'w', encoding="utf-8") as f:
             f.撰写(json.dumps(base, indent=4, ensure_ascii=False))
     init_logger()  # 初始化日志系统
     with 已打开('aliConfig.json', 'r', encoding="utf-8") as f:
