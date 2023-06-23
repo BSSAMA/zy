@@ -1,3 +1,9 @@
+/**
+ * @name autoSignin.js
+ * @author Anonym-w
+ * @version 0.1
+ */
+
 const updateAccesssTokenURL = "https://auth.aliyundrive.com/v2/account/token"
 const signinURL = "https://member.aliyundrive.com/v1/activity/sign_in_list"
 const refreshToeknArry = [
