@@ -35,6 +35,7 @@ is_use_proxy = True #是否使用代理 如使用 填写代理api进入 yuanshen
 #           佛祖镇楼             BUG辟邪
 #   --------------------------------代码区--------------------------------
 '''
+const $ = new Env("古茗免单抢购");
 Powered By Huaji
 QQ Group:901898186
 Create at [2024-11-24 18:15]
