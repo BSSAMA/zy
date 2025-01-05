@@ -7,7 +7,7 @@
 #   * 填答案到: yuanshen_gmqg_answer
 timedelay = 2 #提前请求秒数
 thread_m = 2 #每账号并发线程数
-is_use_proxy = True #是否使用代理 如使用 填写代理api进入 yuanshen_proxy_api 要求 http/https代理 txt格式 每次返回20条+ 换行分割
+is_use_proxy = False #是否使用代理 如使用 填写代理api进入 yuanshen_proxy_api 要求 http/https代理 txt格式 每次返回20条+ 换行分割
 #   11:58分前运行 否则网卡获取不了活动信息 
 #   不限制账号什么也不限制 免费的东西有问题有不懂别问懒得解答
 #   --------------------------------祈求区--------------------------------
