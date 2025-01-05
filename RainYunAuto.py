@@ -33,9 +33,9 @@ const $ = new Env("雨云签到");
 # 获取雨云账号密码，用'&'分隔，例：账号&密码
 if "yuyun_account" in os.environ:
     if len(os.environ["yuyun_account"]) > 1:
-        yuyun_account = os.environ["yuyun_account"].split('&')
-	yuyun_user = yuyun_account[0]
-	yuyun_pwd = yuyun_account[1]
+	    yuyun_account = os.environ["yuyun_account"].split('&')
+	    yuyun_user = yuyun_account[0]
+	    yuyun_pwd = yuyun_account[1]
 else:
     print('未配置环境变量 yuyun_account')
     sys.exit()
