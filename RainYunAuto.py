@@ -5,6 +5,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 import logging
 import json
+import os, re
+import sys
 
 '''
 脚本使用说明：
@@ -27,6 +29,16 @@ import json
 cron: 30 9 * * *
 const $ = new Env("雨云签到");
 '''
+
+# 获取雨云账号密码，用'&'分隔，例：账号&密码
+if "yuyun_account" in os.environ:
+    if len(os.environ["yuyun_account"]) > 1:
+        yuyun_account = os.environ["yuyun_account"].split('&')
+	yuyun_user = yuyun_account[0]
+	yuyun_pwd = yuyun_account[1]
+else:
+    print('未配置环境变量 yuyun_account')
+    sys.exit()
 
 # 忽略 不验证ssl的提示
 import warnings
@@ -141,9 +153,9 @@ class RainYun():
 if __name__ == '__main__':
     accounts = [
         {
-            "user": "",# 账户1账号
+            "user": yuyun_user,# 账户1账号
             #"user1": "",#账户2账号
-            "password": "",#账户1密码
+            "password": yuyun_pwd,#账户1密码
             #"password1": ""# 账户2密码
         }
     ]
