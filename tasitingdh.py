@@ -1,8 +1,7 @@
-
-    # name: "塔斯汀兑换"
-    # cron 58 9,16 * * *
-    # 更新时间:2025-03-01
-    # 青龙环境变量tasitingsign=手机号 user-token;手机号 user-token 和塔斯汀签到共用变量
+# name: "塔斯汀兑换"
+# cron 58 9,16 * * *
+# 更新时间:2025-03-01
+# 青龙环境变量tasitingsign=手机号 user-token;手机号 user-token 和塔斯汀签到共用变量
 import requests
 import json
 import re
